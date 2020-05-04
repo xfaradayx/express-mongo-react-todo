@@ -1,9 +1,12 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 
 const Home = props => {
     
     return (
-        <h1>Home page</h1>
+        <Typography variant="h2">
+            Home page
+        </Typography>
     )
 }
 
