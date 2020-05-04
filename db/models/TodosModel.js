@@ -7,7 +7,7 @@ const schema = {
 };
 
 const collection = 'Todos';
-const userSchema = mongoose.Schema(schema);
-const Todos = mongoose.model(collection, userSchema);
+const TodosSchema = mongoose.Schema(schema);
+const Todos = mongoose.model(collection, TodosSchema);
 
 module.exports = Todos;
