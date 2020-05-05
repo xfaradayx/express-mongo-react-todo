@@ -7,7 +7,7 @@ const SidebarState = ({children}) => {
     const initialState = {
         open: false,
     }
-    const [{open}, dispatch] = useReducer(sidebarReducer, initialState)
+    const [{ open }, dispatch] = useReducer(sidebarReducer, initialState)
     
     const openSidebar = () => {
         dispatch({type: "OPEN_SIDEBAR"})
