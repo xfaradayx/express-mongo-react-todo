@@ -1,11 +1,9 @@
-import React from 'react'
-import { useContext } from 'react';
+import React, { useContext, } from 'react'
+import HeaderContext from '../../context/header/headerContext'
 import SidebarContext from '../../context/sidebar/sidebarContext'
 import { makeStyles } from '@material-ui/core/styles'
 import { AppBar, Typography, IconButton, Button, Toolbar } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
-
-
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
@@ -17,9 +15,10 @@ const useStyles = makeStyles((theme) => ({
   }))
 
 const Header = props => {
-    const classes = useStyles();
-    const {openSidebar} = useContext(SidebarContext);
-    
+    const classes = useStyles()
+    const { openSidebar } = useContext(SidebarContext)
+    const { title } = useContext(HeaderContext)
+
     return (
         <AppBar position="static">
         <Toolbar className={classes.toolbar}>
@@ -27,7 +26,7 @@ const Header = props => {
             <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-            News
+              {title}
             </Typography>
             <Button color="inherit">Login</Button>
         </Toolbar>
