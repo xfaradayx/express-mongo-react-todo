@@ -3,6 +3,7 @@ import SidebarContext  from '../../../context/sidebar/sidebarContext'
 import NotificationImportantOutlinedIcon from '@material-ui/icons/NotificationImportantOutlined'
 import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined'
 import FormatListBulletedOutlinedIcon from '@material-ui/icons/FormatListBulletedOutlined'
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 
 const SidebarConf = (props) => {
     const { closeSidebar } = useContext(SidebarContext)
@@ -25,9 +26,17 @@ const SidebarConf = (props) => {
             key: Math.floor((Math.random() * 10000000)),
             href: '/done',
             icon: <CheckCircleOutlineOutlinedIcon />,
-            title: 'Выполнено',
+            title: 'Выполненные',
             onClick: closeSidebar
         },
+        {
+            key: Math.floor((Math.random() * 10000000)),
+            href: '/deleted',
+            icon: <DeleteOutlineIcon />,
+            title: 'Удаленные',
+            onClick: closeSidebar
+        },
+        
     ]
 }
 

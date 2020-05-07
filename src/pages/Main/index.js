@@ -4,7 +4,7 @@ import Home from '../Home/index'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { Container } from '@material-ui/core'
-import { Switch, Route, Link } from "react-router-dom"
+import { Switch, Route, Redirect, Link } from "react-router-dom"
 
   const Main = props => {
     return (
@@ -23,6 +23,7 @@ import { Switch, Route, Link } from "react-router-dom"
                             <h1>About page</h1>
                         </WithHeaderContext>
                     </Route>
+                    <Redirect to="/"/>
                 </Switch>
             </Container>
         </>

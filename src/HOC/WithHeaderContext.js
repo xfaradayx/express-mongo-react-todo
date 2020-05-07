@@ -3,8 +3,8 @@ import HeaderContext from '../context/header/headerContext'
 import { useLocation } from 'react-router-dom'
 
 const WithHeaderContext = props => {
-    const {setTitle} = useContext(HeaderContext);
-    const location = useLocation();
+    const { setTitle } = useContext(HeaderContext)
+    const location = useLocation()
     
     useEffect(() => {
       setTitle(location.pathname)

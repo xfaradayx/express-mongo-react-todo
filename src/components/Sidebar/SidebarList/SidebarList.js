@@ -1,5 +1,4 @@
-import React, { useContext }  from 'react'
-import SidebarContext from '../../../context/sidebar/sidebarContext'
+import React from 'react'
 import ListItemLink from '../ListItemLink/ListItemLink'
 import List from '@material-ui/core/List'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -8,7 +7,6 @@ import Divider from '@material-ui/core/Divider'
 import SidebarConf from '../SidebarList/SidebarListConfig'
 
 const SidebarList = () => {
-    const { closeSidebar } = useContext(SidebarContext);
     const config = SidebarConf();
     return (
         <List>
@@ -20,7 +18,6 @@ const SidebarList = () => {
                         </ListItemIcon>
                         <ListItemText primary={item.title}/>
                     </ListItemLink>
-
                 )
             })}
             <Divider />

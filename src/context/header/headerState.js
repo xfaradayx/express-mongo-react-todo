@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
 import headerReducer from './headerReducer'
 import HeaderContext from './headerContext'
+import titleAccordance from './titleAccordance'
 
 const HeaderState = ({children}) => {
     const initialState = {
@@ -9,7 +10,7 @@ const HeaderState = ({children}) => {
     const [{title}, dispatch] = useReducer(headerReducer, initialState)
 
     const setTitle = title => {
-        dispatch({type: 'SET_TITLE', title})
+        dispatch({type: 'SET_TITLE', title: titleAccordance[title]})
     }
 
     return (
