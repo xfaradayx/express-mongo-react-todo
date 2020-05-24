@@ -10,6 +10,8 @@ const HeaderState = ({children}) => {
     const [{title}, dispatch] = useReducer(headerReducer, initialState)
 
     const setTitle = title => {
+        console.log(title);
+        
         dispatch({type: 'SET_TITLE', title: titleAccordance[title]})
     }
 

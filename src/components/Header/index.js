@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }))
 
-const Header = props => {
+const Header = () => {
     const classes = useStyles()
     const { openSidebar } = useContext(SidebarContext)
     const { title } = useContext(HeaderContext)
@@ -23,13 +23,21 @@ const Header = props => {
         <AppBar position="static">
             <Container>
               <Toolbar className={classes.toolbar} >
-                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={openSidebar}>
-                  <MenuIcon />
+                  <IconButton 
+                    edge="start" 
+                    className={classes.menuButton} 
+                    color="inherit" 
+                    aria-label="menu" 
+                    onClick={openSidebar}
+                  >
+                    <MenuIcon />
                   </IconButton>
                   <Typography variant="h6" className={classes.title}>
                     {title}
                   </Typography>
-                  <Button color="inherit">Login</Button>
+                  <Button color="inherit">
+                    Login
+                  </Button>
               </Toolbar>
           </Container>
         </AppBar>
