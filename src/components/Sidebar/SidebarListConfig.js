@@ -14,9 +14,4 @@ export default [
         icon: <NotificationImportantOutlinedIcon />,
         title: 'Важные'
     },
-    {
-        href: '/done',
-        icon: <CheckCircleOutlineOutlinedIcon />,
-        title: 'Выполненные'
-    },    
 ]

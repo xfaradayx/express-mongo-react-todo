@@ -18,7 +18,7 @@ const withHeaderTitle = Component => ({...props}) =>  {
     }
   }, [lists])
   
-  return <Component {...props} />  
+  return <Component match={match} {...props} />  
 }
 
 export default withHeaderTitle;

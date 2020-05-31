@@ -2,15 +2,13 @@ import React, { useEffect, useContext }from 'react'
 import { Switch, Route, Redirect } from "react-router-dom"
 import DataContext from '../../context/data/DataContext';
 import Container from '@material-ui/core/Container'
-import TodoList from '../TodoList/index'
+import ListPage from '../ListPage/index'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar/Sidebar'
 
   const Main = () => {
-    const {lists, todos, getLists, getTodos} = useContext(DataContext)    
-
-    
-    
+    const {getLists, getTodos} = useContext(DataContext);    
+ 
     useEffect(()=> {
         const getDataState = async () => {
             await getLists();  
@@ -18,7 +16,7 @@ import Sidebar from '../../components/Sidebar/Sidebar'
         }
 
         getDataState();
-    }, [])
+    }, []);
     
     return (
         <>
@@ -26,19 +24,16 @@ import Sidebar from '../../components/Sidebar/Sidebar'
             <Sidebar />
             <Container fixed maxWidth={"md"}>
                 <Switch>
-                    <Route exact path="/" >
-                        <TodoList />
+                    <Route exact path="/tasks" >
+                        <ListPage />
                     </Route>
                     <Route exact path="/important">
-                        <TodoList />
-                    </Route>
-                    <Route exact path="/done" >
-                        <TodoList />
+                        <ListPage />
                     </Route>
                     <Route exact path="/:listId" >
-                        <TodoList />
+                        <ListPage />
                     </Route>
-                    <Redirect to={{ pathname: "/" }}></Redirect>
+                    <Redirect to={{ pathname: "/tasks" }}></Redirect>
                 </Switch>
             </Container>
         </>
