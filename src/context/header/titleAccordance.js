@@ -1,8 +1,8 @@
 const titleAccordance = {
-    "/tasks": 'Все задачи',
+    "/": 'Все задачи',
     "/about": "О нас",
     '/done': "Выполненные задачи", 
     "/important": "Важные задачи"
-}
+};
 
-export default titleAccordance
+export default titleAccordance;

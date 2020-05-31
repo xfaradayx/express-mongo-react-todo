@@ -6,6 +6,7 @@ const TodoList = () => {
     return (
         <Typography variant="h2">
             Todo list
+
         </Typography>
     )
 }

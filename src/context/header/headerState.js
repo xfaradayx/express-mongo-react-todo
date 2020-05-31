@@ -12,7 +12,7 @@ const HeaderState = ({children}) => {
     const setTitle = title => {
         console.log(title);
         
-        dispatch({type: 'SET_TITLE', title: titleAccordance[title]})
+        dispatch({type: 'SET_TITLE', payload: title})
     }
 
     return (
