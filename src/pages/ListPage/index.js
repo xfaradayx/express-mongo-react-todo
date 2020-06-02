@@ -1,36 +1,40 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import DataContext from '../../context/data/DataContext';
 import withHeaderTitle from '../../HOC/withHeaderTitle';
-import { Typography } from '@material-ui/core';
+import TodoInput from '../../components/TodoInput/index';
+import TodoList from '../../components/TodoList/index';
 
-const TodoList = ({match})  => {
-    const {todos} = useContext(DataContext) 
+const ListPage = ({match})  => {
+    const {todos, addTodo} = useContext(DataContext);
+    console.log(todos);
     
-    const filterListByPath = {
-        "/tasks": todo => todo,
-        "/important": todo => todo.important,
-        "/done": todo => todo
+    const filterTodoByPath = {
+        "/tasks": todos.filter(todo => todo),
+        "/important": todos.filter(todo => todo.important)
     }
-    const filterListById = id => list => list._id === id;
-
-    const filteredTodos = match.params.listId ? 
-        todos.filter(filterListById(match.params.listId)) :
-        todos.filter(filterListByPath[match.path]);
-    console.log('filtered', filteredTodos);
+    const filterTodoById = id => todos.filter(todo => todo.listId === id);
     
+    // const filteredTodos = useMemo(
+    //     () =>  match.params.listId ? 
+    //         filterTodoById(match.params.listId) :
+    //         filterTodoByPath[match.path],
+    //     [match, todos, addTodo]
+    // )
+    // console.log(filteredTodos);
+    const filteredTodos = match.params.listId ? 
+            filterTodoById(match.params.listId) :
+            filterTodoByPath[match.path];
+
+    const submitHandler = title => {
+        addTodo(title, match.params.listId);        
+    }
+
     return (
-        <Typography variant="h3">
-            <ul>
-                {filteredTodos.map(todo => {
-                    return (
-                        <li key={todo._id}>
-                            {todo.title}
-                        </li>
-                    )
-                })}
-            </ul>
-        </Typography>
+        <>
+            <TodoList list={filteredTodos} />
+            <TodoInput onSubmit={submitHandler}/>
+        </>
     );
 }
 
-export default withHeaderTitle(TodoList);
+export default withHeaderTitle(ListPage);

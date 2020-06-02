@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
-import ListItemLink from '../ListItemLink/ListItemLink';
+import ListItemLink from '../ListItemLink/index';
 import List from '@material-ui/core/List';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -20,7 +20,6 @@ const SidebarList = ({list, onClose}) => {
                     </ListItemLink>
                 )
             })}
-            {/* <Divider /> */}
         </List>
     )
 }

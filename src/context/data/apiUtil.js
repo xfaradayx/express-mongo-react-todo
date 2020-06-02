@@ -1,13 +1,26 @@
 export const getLists = async () => {
     const res = await fetch('/api/getLists');
-    const data = await res.json();
+    const lists = await res.json();
 
-    return data;
+    return lists;
 }
 
 export const getTodos = async () => {
     const res = await fetch('/api/getTodos');
-    const data = await res.json();
+    const todos = await res.json();
 
-    return data;
+    return todos;
+}
+
+export const addTodo = async (title, listId) => {
+    const res = await fetch('/api/addTodo', {
+        method: "POST",
+        body: JSON.stringify({title, listId}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const todo = await res.json();
+    
+    return todo;
 }

@@ -4,7 +4,7 @@ const Todos = require('../controllers/Todos');
 const Lists = require('../controllers/Lists');
 
 // todos
-router.get('/api/addTodo', Todos.add);
+router.post('/api/addTodo', Todos.addTodo);
 router.get('/api/getTodos', Todos.getTodos);
 
 // lists

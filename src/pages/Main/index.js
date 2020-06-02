@@ -7,8 +7,8 @@ import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar/Sidebar'
 
   const Main = () => {
-    const {getLists, getTodos} = useContext(DataContext);    
- 
+    const {todos, getLists, getTodos} = useContext(DataContext);  
+    
     useEffect(()=> {
         const getDataState = async () => {
             await getLists();  

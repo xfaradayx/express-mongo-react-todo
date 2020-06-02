@@ -1,5 +1,5 @@
 
-const dataReducer = (state, action) => {
+const dataReducer = (state, action) => {      
     switch (action.type) {
         // lists
         case "GET_LISTS": 
@@ -14,10 +14,13 @@ const dataReducer = (state, action) => {
                 ...state,
                 todos: action.payload
             }
-        default: 
+        case "CREATE_TODO":
             return {
-                ...state
+                ...state,
+                todos: [...state.todos.concat(action.payload)]
             }
+        default: 
+            return state;
     }
 
 }

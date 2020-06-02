@@ -21,25 +21,23 @@ const Header = () => {
 
     return (
         <AppBar position="static">
-            <Container>
-              <Toolbar className={classes.toolbar} >
-                  <IconButton 
-                    edge="start" 
-                    className={classes.menuButton} 
-                    color="inherit" 
-                    aria-label="menu" 
-                    onClick={openSidebar}
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                  <Typography variant="h6" className={classes.title}>
-                    {title}
-                  </Typography>
-                  <Button color="inherit">
-                    Login
-                  </Button>
-              </Toolbar>
-          </Container>
+            <Toolbar className={classes.toolbar} >
+                <IconButton 
+                  edge="start" 
+                  className={classes.menuButton} 
+                  color="inherit" 
+                  aria-label="menu" 
+                  onClick={openSidebar}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" className={classes.title}>
+                  {title}
+                </Typography>
+                <Button color="inherit">
+                  Login
+                </Button>
+            </Toolbar>
         </AppBar>
     )
 }

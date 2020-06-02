@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import DataContext from '../../context/data/DataContext'
-import SidebarContext from '../../context/sidebar/sidebarContext'
-import SidebarList from './SidebarList/SidebarList'
-import Drawer from '@material-ui/core/Drawer'
-import sidebarConfig from './SidebarListConfig'
-import Divider from '@material-ui/core/Divider'
+import React, { useContext } from 'react';
+import DataContext from '../../context/data/DataContext';
+import SidebarContext from '../../context/sidebar/sidebarContext';
+import SidebarList from './SidebarList/index';
+import Drawer from '@material-ui/core/Drawer';
+import Divider from '@material-ui/core/Divider';
+import sidebarConfig from './SidebarListConfig';
 
 const Sidebar = () => {
     const { open, closeSidebar } = useContext(SidebarContext);
