@@ -16,7 +16,6 @@ export const getTodos = async (dispatch) => {
 
 export const addTodo = (title, listId) => async (dispatch) => {
     const todo = await api.addTodo(title, listId);
-    console.log("ACTION ADDTODO", todo);
     
     dispatch({type: "CREATE_TODO", payload: todo});
 }

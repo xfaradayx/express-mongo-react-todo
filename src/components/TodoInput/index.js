@@ -15,7 +15,7 @@ const TodoInput = ({onSubmit}) => {
 
     return (
         <form onSubmit={handleSubmit(value)}>
-            <FormControl fullWidth >
+            <FormControl fullWidth>
                 <InputLabel htmlFor="todo-form-input">Что нужно сделать?...</InputLabel>
                 <Input 
                     id="todo-form-input" 

@@ -1,15 +1,17 @@
 import React from 'react';
 import TodoItem from '../TodoItem/index';
+import List from '@material-ui/core/List';
 
-const TodoList = ({list}) => {
+const TodoList = ({todoList}) => {
+    
     return (
-        <ul>
-            {list.map(todo => {
+        <List>
+            {todoList.map(todo => {
                 return (
                     <TodoItem key={todo._id} todo={todo} />
                 )
             })}
-        </ul>
+        </List>
     );
 }
 

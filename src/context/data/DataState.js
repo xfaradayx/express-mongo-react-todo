@@ -7,7 +7,7 @@ import initialState from './state';
 
 const DataState = ({children}) => {
     const [state, dispatch] = useReducer(dataReducer, initialState);
-    window.state = {...state};
+
     return (
         <DataContext.Provider value={{
             lists: state.lists, 

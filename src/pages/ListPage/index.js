@@ -6,32 +6,35 @@ import TodoList from '../../components/TodoList/index';
 
 const ListPage = ({match})  => {
     const {todos, addTodo} = useContext(DataContext);
-    console.log(todos);
     
     const filterTodoByPath = {
         "/tasks": todos.filter(todo => todo),
         "/important": todos.filter(todo => todo.important)
-    }
+    };
     const filterTodoById = id => todos.filter(todo => todo.listId === id);
     
-    // const filteredTodos = useMemo(
-    //     () =>  match.params.listId ? 
-    //         filterTodoById(match.params.listId) :
-    //         filterTodoByPath[match.path],
-    //     [match, todos, addTodo]
-    // )
-    // console.log(filteredTodos);
-    const filteredTodos = match.params.listId ? 
+    const filteredTodos = useMemo(
+        () =>  match.params.listId ? 
             filterTodoById(match.params.listId) :
-            filterTodoByPath[match.path];
+            filterTodoByPath[match.path],
+        [match, todos]
+    );
 
     const submitHandler = title => {
         addTodo(title, match.params.listId);        
-    }
+    };
+    
+    const updateHandler = todoId => {
+        
+    };
 
+    const deleteHandler = todoId => {
+
+    };
+    
     return (
         <>
-            <TodoList list={filteredTodos} />
+            <TodoList todoList={filteredTodos} />
             <TodoInput onSubmit={submitHandler}/>
         </>
     );

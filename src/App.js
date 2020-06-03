@@ -6,7 +6,6 @@ import SidebarState from './context/sidebar/sidebarState';
 import HeaderState from './context/header/headerState';
 import DataState from './context/data/DataState';
 
-
 function App() {
   return (
     <DataState>

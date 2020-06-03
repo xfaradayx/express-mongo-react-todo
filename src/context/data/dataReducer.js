@@ -17,7 +17,7 @@ const dataReducer = (state, action) => {
         case "CREATE_TODO":
             return {
                 ...state,
-                todos: [...state.todos.concat(action.payload)]
+                todos: [...state.todos, action.payload]
             }
         default: 
             return state;
