@@ -9,7 +9,8 @@ const ListPage = ({match})  => {
     
     const filterTodoByPath = {
         "/tasks": todos.filter(todo => todo),
-        "/important": todos.filter(todo => todo.important)
+        "/important": todos.filter(todo => todo.important),
+        "/archive": todos.filter(todo => todo)
     };
     const filterTodoById = id => todos.filter(todo => todo.listId === id);
     

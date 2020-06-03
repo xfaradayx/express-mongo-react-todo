@@ -32,6 +32,9 @@ const Main = () => {
                     <Route exact path="/important">
                         <ListPage />
                     </Route>
+                    <Route exact path="/archive">
+                        <ListPage />
+                    </Route>
                     <Route exact path="/:listId" >
                         <ListPage />
                     </Route>
