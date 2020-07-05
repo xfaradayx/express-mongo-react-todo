@@ -7,14 +7,12 @@ import initialState from './state';
 
 const DataState = ({children}) => {
     const [state, dispatch] = useReducer(dataReducer, initialState);
+    const bindedActions = Object.entries(actions).reduce((acc, [name, fn]) => ({...acc, [name]: fn.bind(null, dispatch)}), {});
 
     return (
         <DataContext.Provider value={{
-            lists: state.lists, 
-            todos: state.todos,
-            getLists: () => actions.getLists(dispatch), 
-            getTodos: () => actions.getTodos(dispatch),
-            addTodo: (title, listId) => actions.addTodo(title, listId)(dispatch)
+            state,
+            actions: bindedActions,
         }}>
             {children}
         </DataContext.Provider>

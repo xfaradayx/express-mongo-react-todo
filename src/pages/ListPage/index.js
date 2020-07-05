@@ -5,8 +5,10 @@ import TodoInput from '../../components/TodoInput/index';
 import TodoList from '../../components/TodoList/index';
 
 const ListPage = ({match})  => {
-    const {todos, addTodo} = useContext(DataContext);
-    
+    const {state, actions} = useContext(DataContext);
+    const { todos } = state;
+    const { addTodo } = actions;
+
     const filterTodoByPath = {
         "/tasks": todos.filter(todo => todo),
         "/important": todos.filter(todo => todo.important),

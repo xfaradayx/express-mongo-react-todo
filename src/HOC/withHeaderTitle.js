@@ -4,10 +4,12 @@ import HeaderContext from '../context/header/headerContext';
 import DataContext from '../context/data/DataContext';
 import titleAccordanceStatic from '../context/header/titleAccordance';
 
-const withHeaderTitle = Component => ({...props}) =>  {
+const withHeaderTitle = Component => ({...props}) =>  {  
   const match = useRouteMatch();
   const { setTitle } = useContext(HeaderContext);
-  const {lists} = useContext(DataContext);
+  const { state } = useContext(DataContext);
+  const {lists} = state;
+
   const titleAccordanceDynamic = lists.reduce((acc, list) => { acc[list._id] = list.title; return acc; }, {});
   
   useEffect(() => {

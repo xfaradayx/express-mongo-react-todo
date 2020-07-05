@@ -8,8 +8,9 @@ import sidebarConfig from './SidebarListConfig';
 
 const Sidebar = () => {
     const { open, closeSidebar } = useContext(SidebarContext);
-    let { lists } = useContext(DataContext);    
-    
+    const { state } = useContext(DataContext);    
+    const { lists } = state; 
+
     const config = sidebarConfig;
     return (
         <Drawer anchor="left" open={open} onClose={closeSidebar}>
